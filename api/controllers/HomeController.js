@@ -1,7 +1,9 @@
 module.exports = {
     GetListGoods: function(req, res) {
         res.view('home/home', {
-            locals: {}
+            locals: {
+                baseUrlServer: sails.config.myConfig + '/app/appHome'
+            }
         });
     }
 };

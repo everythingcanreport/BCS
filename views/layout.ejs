@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=typeof title == 'undefined' ? 'Bao Cao Su Center' : title%></title>
+    <title><%=typeof title == 'undefined' ? 'github' : title%></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -29,17 +29,17 @@
     -->
 
     <!-- bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">      
-    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="themes/css/bootstrappage.css" rel="stylesheet"/>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+    <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/themes/css/bootstrappage.css" rel="stylesheet"/>
     <!-- global styles -->
-    <link href="themes/css/flexslider.css" rel="stylesheet"/>
-    <link href="themes/css/main.css" rel="stylesheet"/>
+    <link href="/themes/css/flexslider.css" rel="stylesheet"/>
+    <link href="/themes/css/main.css" rel="stylesheet"/>
     <!-- scripts -->
-    <script src="themes/js/jquery-1.7.2.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>       
-    <script src="themes/js/superfish.js"></script>  
-    <script src="themes/js/jquery.scrolltotop.js"></script>
+    <script src="/themes/js/jquery-1.7.2.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>       
+    <script src="/themes/js/superfish.js"></script>  
+    <script src="/themes/js/jquery.scrolltotop.js"></script>
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
@@ -47,15 +47,29 @@
 
   <body>
     <!--TOP HEADER-->
-      <%- partial('top_bar.ejs') %>
+      <%if(locals &&
+        locals.baseUrlServer &&
+        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        <%- partial('top_bar.ejs') %>
+        <%}%>
     <!--END-->
-    <div id="wrapper" class="container">
+    <div id="wrapper" class="container <%=(locals &&
+        locals.baseUrlServer &&
+        locals.baseUrlServer.indexOf('/login')==-1) ? '' : 'login'%>">
       <!--MAIN MENU-->
-      <%- partial('main_menu.ejs') %>
+      <%if(locals &&
+        locals.baseUrlServer &&
+        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        <%- partial('main_menu.ejs') %>
+        <%}%>
       <!--END-->
 
       <!--BANNER-->
-      <%- partial('banner.ejs') %>
+      <%if(locals &&
+        locals.baseUrlServer &&
+        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        <%- partial('banner.ejs') %>
+        <%}%>
       <!--END-->
 
       <!--CONTENT-->
@@ -63,11 +77,19 @@
       <!--END-->
 
       <!--FOOTER-->
-     <%- partial('footer.ejs') %>
+      <%if(locals &&
+        locals.baseUrlServer &&
+        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        <%- partial('footer.ejs') %>
+        <%}%>
       <!--END-->
 
       <!--COPYRIGHT-->
-      <%- partial('copyright.ejs') %>
+      <%if(locals &&
+        locals.baseUrlServer &&
+        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        <%- partial('copyright.ejs') %>
+        <%}%>
       <!--END-->
     </div>
     <!--
@@ -122,8 +144,8 @@
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <!--SCRIPTS END-->
-    <script src="themes/js/common.js"></script>
-    <script src="themes/js/jquery.flexslider-min.js"></script>
+    <script src="/themes/js/common.js"></script>
+    <script src="/themes/js/jquery.flexslider-min.js"></script>
     <script type="text/javascript">
       $(function() {
         $(document).ready(function() {

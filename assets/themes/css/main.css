@@ -437,7 +437,7 @@ section.navbar{
     -o-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
     transition: all 0.2s linear;
-	box-shadow: 0px 0px 5px #ccc;
+	/*box-shadow: 0px 0px 5px #ccc;*/
 }
 .product-box:hover a{
 	color:#fff !important;
@@ -526,7 +526,7 @@ section.our_client .row{
 }
 .search_form input{
 	background: url(../images/search.png) #fff no-repeat 97% 6px;
-	color:#fff;
+	color:#666;
 	text-shadow:none;
 	padding-right:25px;	
 	border:1px solid #eee;
@@ -779,10 +779,30 @@ section.our_client .row{
 
 /* Custom
 ----------------------------------------------------------------------------- */
-.text-primary { color: #eb4800; }
 
+.text-primary { color: #eb4800; }
+.text-left   { text-align: left !important; }
+.text-right  { text-align: right !important; }
+.text-center { text-align: center !important; }
 .uppercase { text-transform: uppercase; }
 
+.margin-top-10 { margin-top: 10px; }
+.margin-bottom-10 { margin-bottom: 10px; }
+.margin-left-10 { margin-left: 10px; }
+.margin-right-10 { margin-right: 10px; }
+
+.left { float: left; }
+.right { float: right; }
+.background-image { background: url("../images/bg_stripeslight.png") 0 0 repeat transparent; }
+
+
+.login { 
+	width: 300px; 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 .product-box a.title {
 	margin: 0;
 }
@@ -790,6 +810,9 @@ section.our_client .row{
 .product-box {
 	padding-bottom: 0;
 	border-bottom: 0;
+}
+.product-box img { 
+	width: 100%;
 }
 .product-box p.price {
 	padding: 10px 0;
@@ -800,6 +823,15 @@ section.our_client .row{
 	/*background-color: transparent;*/
 }
 .flexslider .slides img {
-	height: 315px;
+	height: 215px;
 }
+.cart-image {
+	height: 50px;
+	width: 50px;
+}
+img.pageBanner{
+	height: 215px;
+}
+
+
 
