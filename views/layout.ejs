@@ -36,30 +36,27 @@
     <link href="/themes/css/flexslider.css" rel="stylesheet"/>
     <link href="/themes/css/main.css" rel="stylesheet"/>
     <!-- scripts -->
-    <script src="/themes/js/jquery-1.7.2.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>       
-    <script src="/themes/js/superfish.js"></script>  
-    <script src="/themes/js/jquery.scrolltotop.js"></script>
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
+     <script type="text/javascript" src="/libs/require.js" data-main="<%=locals.baseUrlServer%>"></script>
   </head>
 
   <body>
     <!--TOP HEADER-->
       <%if(locals &&
         locals.baseUrlServer &&
-        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        locals.baseUrlServer.indexOf('/appLogin')==-1) {%>
         <%- partial('top_bar.ejs') %>
         <%}%>
     <!--END-->
     <div id="wrapper" class="container <%=(locals &&
         locals.baseUrlServer &&
-        locals.baseUrlServer.indexOf('/login')==-1) ? '' : 'login'%>">
+        locals.baseUrlServer.indexOf('/appLogin')==-1) ? '' : 'login'%>">
       <!--MAIN MENU-->
       <%if(locals &&
         locals.baseUrlServer &&
-        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        locals.baseUrlServer.indexOf('/appLogin')==-1) {%>
         <%- partial('main_menu.ejs') %>
         <%}%>
       <!--END-->
@@ -67,7 +64,7 @@
       <!--BANNER-->
       <%if(locals &&
         locals.baseUrlServer &&
-        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        locals.baseUrlServer.indexOf('/appLogin')==-1) {%>
         <%- partial('banner.ejs') %>
         <%}%>
       <!--END-->
@@ -79,7 +76,7 @@
       <!--FOOTER-->
       <%if(locals &&
         locals.baseUrlServer &&
-        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        locals.baseUrlServer.indexOf('/appLogin')==-1) {%>
         <%- partial('footer.ejs') %>
         <%}%>
       <!--END-->
@@ -87,7 +84,7 @@
       <!--COPYRIGHT-->
       <%if(locals &&
         locals.baseUrlServer &&
-        locals.baseUrlServer.indexOf('/login')==-1) {%>
+        locals.baseUrlServer.indexOf('/appLogin')==-1) {%>
         <%- partial('copyright.ejs') %>
         <%}%>
       <!--END-->
@@ -142,23 +139,7 @@
     -->
 
     <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
+    
     <!--SCRIPTS END-->
-    <script src="/themes/js/common.js"></script>
-    <script src="/themes/js/jquery.flexslider-min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        $(document).ready(function() {
-          $('.flexslider').flexslider({
-            animation: "fade",
-            slideshowSpeed: 4000,
-            animationSpeed: 600,
-            controlNav: false,
-            directionNav: true,
-            controlsContainer: ".flex-container" // the container that holds the flexslider
-          });
-        });
-      });
-    </script>
   </body>
 </html>

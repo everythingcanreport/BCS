@@ -7,8 +7,12 @@ module.exports.routes = {
         controller: 'OAuthController',
         action: 'Login'
     },
+    '/fb/login': {
+        controller: 'OAuthController',
+        action: 'FBLogin'
+    },
     '/admin/manage': {
         controller: 'AdminController',
         action: 'Manage'
-    }
+    },
 };
